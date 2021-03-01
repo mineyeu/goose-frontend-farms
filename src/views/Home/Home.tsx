@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Heading, Text, BaseLayout } from '@pancakeswap-libs/uikit'
+import { Heading, Text, BaseLayout } from 'couscous-uikit'
 import useI18n from 'hooks/useI18n'
 import Page from 'components/layout/Page'
 import FarmStakingCard from './components/FarmStakingCard'
@@ -11,9 +11,10 @@ import TwitterCard from './components/TwitterCard'
 
 const Hero = styled.div`
   align-items: center;
-  background-image: url('/images/egg/3.png');
+  background-image: url('/images/couscous/3b.png');
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: 160px 140px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -23,8 +24,9 @@ const Hero = styled.div`
   text-align: center;
 
   ${({ theme }) => theme.mediaQueries.lg} {
-    background-image: url('/images/egg/3.png'), url('/images/egg/3b.png');
-    background-position: left center, right center;
+    background-image: url('/images/couscous/3b.png');
+    background-position: right center;
+    background-size: 160px 140px;
     height: 165px;
     padding-top: 0;
   }
@@ -33,6 +35,7 @@ const Hero = styled.div`
 const Cards = styled(BaseLayout)`
   align-items: stretch;
   justify-content: stretch;
+
   margin-bottom: 48px;
 
   & > div {
@@ -60,14 +63,14 @@ const Home: React.FC = () => {
     <Page>
       <Hero>
         <Heading as="h1" size="xl" mb="24px" color="secondary">
-          {TranslateString(576, 'Goose Finance')}
+          {TranslateString(576, 'Couscous Finance')}
         </Heading>
-        <Text>{TranslateString(578, 'Top 3 best DEFI app on Binance Smart Chain.')}</Text>
+        <Text>{TranslateString(578, 'The Most Delicious Yield Farm AMM on Binance Smart Chain.')}</Text>
       </Hero>
       <div>
         <Cards>
           <FarmStakingCard />
-          <TwitterCard/>
+          {/* <TwitterCard/> */}
           <CakeStats />
           <TotalValueLockedCard />
         </Cards>
